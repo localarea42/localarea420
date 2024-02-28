@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    body{
+        background-color: rgb(226, 221, 221);
+        margin-bottom: 10px;
+        background-attachment: fixed;
+    }
+    header{
+        max-width: 100%;
+        height: 70px;
+        background-color: #e1e7ea;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+    header img{
+        border: 0px solid #0077B5;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+    header button{
+        width: 400px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin-left: 50px;
+        margin-top: 20px;
+        text-align: start;
+        padding: 15px;
+
+    }
+    header nav{
+        display: inline-flex;
+        float: right;
+        margin-right: 60px;
+
+    }
+    nav ul{
+        display: flex;
+    }
+    nav ul a{
+        margin-left: 50px;
+        text-decoration: none;
+    }
+    ul i{
+        font-size: 30px;
+        color: black;
+    }
+    
+    
+    .sidebar{
+        width: 200px;
+        height: auto;
+        background-color: white;
+        margin-left: 30px;
+        margin-top: 45px;
+        padding: 3px;
+        border: 1px solid ;
+        border-radius: 10px;
+    
+
+    }
+    .sidebarcontent{
+        margin-top: 10px;
+        margin-left: 50px;
+        border: 2px solid whitesmoke;
+        border-radius: 50%;
+    }
+    a:hover{
+        color: blue;
+        text-decoration: underline;
+    }
+    .views{
+        border-top: 1px solid green;
+        border-bottom: 1px solid grey;
+    }
+    .recent{
+        width: 200px;
+        height: 400px;
+        background-color: white;
+        margin-left: 30px;
+        margin-top: 20px;
+        padding-left: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .recent a{
+        text-decoration: none;
+        color: grey;
+    }
+    .recent a:hover{
+        color: blue;
+        text-decoration: underline;
+    }
+    .startpost{
+        position: absolute;
+        display: flex;
+        left: 22%;
+        top: 20%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        
+    }
+    .startpost button{
+        display: inline;
+        width: 450px;
+        height: 40px;
+        margin-left: 30px;
+        margin-top: 15px;
+        border: 1px solid black;
+        border-radius: 20px;
+        background: transparent;
+    }
+    .post{
+        position: relative;
+        display: inline-block;
+        width: 600px;
+        height: 120px;
+        background-color: white;
+        border: 0px solid black;
+        border-radius: 10px;
+        
+    }
+    .postimg{
+        border: 0px solid;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    #icon{
+        font-size: 10px;
+    }
+    .links{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .links > a{
+        margin-left: 100px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+        font-weight: 100;
+    }
+    .links > a:hover{
+        color: blue;
+        text-decoration: underline;
+    }
+    .news{
+        position: absolute;
+        display: flex;
+        left: 75%;
+        top: 20%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .linkedinnews{
+        position: relative;
+        float: right;
+        width: 250px;
+        height: auto;
+        padding: 5px;
+        
+    }
+    .showmore{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .mainpost{
+        position: absolute;
+        display: flex;
+        left: 22%;
+        top: 44%;
+        border: 0px solid black;
+        border-radius: 10px;
+        background-color: white;
+    }
+    .post1{
+        position: relative;
+        display: inline-block;
+        width: 600px;
+        height: auto;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .post1 div{
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 10px;
+    }
+    .post1 h3{
+        float: right;
+        margin-right: 20px;
+        color: rgb(23, 23, 214);
+    }
+    .post1 h3:hover{
+        border: 1px solid blue;
+        border-radius: 20px;
+        padding: 1px;
+    }
+    .postimage{
+        margin: 10px 50px;
+    }
+    .icons i{
+        margin-left: 100px;
+        margin-top: 5px;
+        font-size: 15px;
+        padding-bottom: 10px;
+    }
+    .premium{
+        position: absolute;
+        display: flex;
+        left: 75%;
+        top: 75%;
+        background-color: white;
+        border: 0px solid black;
+        border-radius: 10px;
+        
+    }
+    .pre{
+        position: relative;
+        float: right;
+        width: 250px;
+        height: auto;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    .get{
+        border: 1px solid blue;
+        border-radius: 20px;
+        color: blue;
+        margin: 40px;
+        padding: 10px 20px;
+        background: transparent;
+        cursor: pointer;
+    }
+    .get:hover{
+        border: 2px solid blue;
+        box-shadow: 2px 2px 2px black;
+
+    }
+    .footer {
+        background-color: #333;
+        color: #fff;
+        margin-top: 20px;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .container {
+        max-width: auto;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        flex: 1;
+        padding: 0 20px;
+        text-align: left;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .footer-section p {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    
+    
+    /* Add more styles for additional social media icons as needed */
+    
+    
+</style>
+<body>
+    <header>
+        <div style="display: flex;">
+        <img src="https://up.yimg.com/ib/th?id=OIP.iZiWCTqjwKLTsGkG2NiucAHaHa&%3Bpid=Api&rs=1&c=1&qlt=95&w=122&h=122" width="50px" height="50px" alt="">
+        <button style="padding:15px;"> <i class="fa fa-search" aria-hidden="true"></i> Search</button>
+        <nav>
+        <ul>
+            <div>
+                <a href=""><i class="fa fa-home"></i></a>
+                <a href="" style="color: black; display: block;">home</a>
+            </div>
+            <div>
+                <a href=""><i class="fa fa-users" aria-hidden="true"></i></a>
+                <a href="" style="color: black; display: block;">Network</a>
+            </div>
+            <div>
+                <a href=""><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+                <a href="" style="color: black; display: block;">Jobs</a>
+            </div>
+            <div>
+                <a href=""><i class="fa fa-commenting" aria-hidden="true"></i></a>
+                <a href="" style="color: black; display: block; text-align:center;">Messaging</a>
+            </div>
+            <div>
+                <a href=""><i class="fa fa-bell" aria-hidden="true"></i></a>
+                <a href="" style="color: black; display: block;">home</a>
+            </div>
+            <div>
+            <img class="sidebarcontent" src="D:\my photos\instagram\ganesh_gani_.01-20230430-0002.jpg" width="40px" height="40px">
+            
+            </div>
+        </ul>
+        </nav>
+
+    </header>
+
+    <div class="sidebar">
+        <img class="sidebarcontent" src="D:\my photos\instagram\ganesh_gani_.01-20230430-0002.jpg" width="70px" height="70px">
+        <center><h2 style="font-size: 15px;">KUMMARA GANESH</h2></center>
+        <center><a href="" style="font-size: 13px; text-decoration:none; color:black;">Student at Sri Venkateswara College of Engineering, Tirupati</a></center>
+        <div class="views">
+            <p style="margin-left: 4px;">Profile viewers <span style="float: right; margin-right: 15px; color:blue">29</span></p>
+            <p style="margin-left: 4px;">Post impressions<span style="float: right; margin-right: 15px; color:blue">277</span></p>
+        </div>
+        <center><h4>My items</h4></center>
+    </div>
+
+
+    <div class="recent">
+        <b><p style="color: grey;">Recent</p></b>
+        <i class="fa fa-users"> <a style="font-size: 9px" href="">LetsGrowMore(LGM) Network</a> </i>
+        <br><br>
+        <b><p style="color: blue;">Groups</p></b>
+        <br>
+        <i class="fa fa-users"> <a style="font-size: 9px" href="">LetsGrowMore(LGM) Network</a> </i><br><br>
+        <i class="fa fa-users"> <a style="font-size: 9px" href="">Think Champ pvt ltd</a> </i><br><br>
+        <i class="fa fa-users"> <a style="font-size: 9px" href="">Barath Intern</a> </i><br><br>
+        <b><p style="color: blue;">Events<span style="float: right; margin-right: 15px;">+</span></p></b>
+        <b><p style="color: blue;">Followed hashtags</p></b>
+        <hr style="width: 180px;">
+        <b><p style="text-align: center; color:grey;">Discover more</p></b>
+    </div>
+
+
+    <aside class="startpost">
+        <div class="post">
+            <div style="display: flex;">
+            <img class="postimg" src="D:\my photos\instagram\ganesh_gani_.01-20230430-0002.jpg" width="50px" height="50px">
+            <b><button style="text-align: start; padding-left:10px; font-size:15px;">start a post</button></b>
+            </div>
+            <div class="links">
+                <a href=""><i style="color: blue;" class="fa fa-file-image" aria-hidden="true"></i> Media</a>
+                <a href=""><i style="color: rgb(159, 117, 65);" class="fa fa-calendar" aria-hidden="true"></i> Event</a>
+                <a href=""><i style="color: rgb(213, 147, 25);" class="fa fa-list" aria-hidden="true"></i> Write article</a>
+                
+            </div>
+        </div>
+    </aside>
+
+
+    <aside class="news">
+        <div class="linkedinnews">
+            <h2>LinkedIn News <span style="float: right; padding-right: 20px; font-size: 15px;"><i class="fa fa-info-circle" aria-hidden="true"></i></span></h2>
+            <h3 style="font-size: 16px; margin-left:5px;">India's solar sector shines bright<span style="display:block; margin-left: 15px; color:grey;">Top news</span></h3>
+            <h3 style="font-size: 16px; margin-left:5px;">Will UK recession be 'short-lived'?<span style="display:block; margin-left: 15px; color:grey;">Top news</span></h3>
+            <h3 style="font-size: 16px; margin-left:5px;">Paytm bank ban impact on fintech<span style="display:block; margin-left: 15px; color:grey;">Top news</span></h3>
+            <h3 style="font-size: 16px; margin-left:5px;">Top skills for tech freshers<span style="display:block; margin-left: 15px; color:grey;">Top news</span></h3>
+            <a class="showmore" href="">Show more</a>
+        </div>
+    </aside>
+
+
+
+    <aside class="mainpost">
+        <div class="post1">
+            <img class="postimg" src="D:\my photos\instagram\ganesh_gani_.01-20230430-0002.jpg" width="40px" height="40px">
+            <div>
+                <h2>KUMMARA GANESH</h2>
+                <p style="font-size: 13px;">Intern at Think Champ Pvt Ltd | Python Fullstack Developer</p>
+                <p>1h . Edited. <i id="icon" class="fa fa-globe" style="display: inline;"> </i></p>
+            </div>
+            <h3>+ Follow</h3>
+            <hr style="width: auto; color: grey;">
+            <p style="text-indent: 60px; padding: 15px; ">Hello connections, checkout my new project - Google homepage using HTML and CSS. <span style="color: blue; margin-left:2px;">#html #css #google #webdevelopment #frontenddevelopment #design</span></p>
+            <h4 style="padding-left: 10px;">Github link: <span style="color: rgb(36, 36, 206); margin-left:5px; padding-left: 5px;"> https://github/kummaraGanesh/ganeshsvec01</span></h4>
+            <img class="postimage" src="C:\Users\91949\OneDrive\Pictures\Screenshots\google.png" alt="" width="500px" height="200px">
+            <hr style="width: auto; color: grey;">
+            <p style="color: grey; padding-left:10px;">GNANESWAR T and 255 others </p>
+            <hr style="width: auto; color: grey;">
+
+            <div class="icons">
+                <i class="fa fa-thumbs-up" aria-hidden="true"> Like</i>
+                <i class="fa fa-commenting" aria-hidden="true"> comment</i>
+                <i class="fa fa-paper-plane" aria-hidden="true"> send</i>
+            </div>
+        </div>
+    </aside>
+
+
+
+    <aside class="premium">
+        <div class="pre">
+            <p style="float: right; padding-right: 20px;">Ad <i class="fa fa-ellipsis-h" aria-hidden="true"></i></p>
+            <br>
+            <p style="padding-left: 5px; text-align:center; color: grey;">KUMMARA,invest in your future with this exclusive offer.</p>
+            <img style="margin-left: 30px;" class="postimg" src="D:\my photos\instagram\ganesh_gani_.01-20230430-0002.jpg" width="60px" height="60px">
+            <i style="font-size: 60px; color:rgb(159, 117, 65); margin-left: 40px;" class="fab fa-linkedin"></i><br><br>
+            <p style="text-align: center; color:grey;">Enjoy 50% off 2 months of LinkedIn Premium!</p>
+            <button class="get">Get 50% off today</button>
+        </div>
+    </aside>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                   <h3>About Us</h3>
+                    <p>LinkedIn corporation <i class="fa fa-copyright" aria-hidden="true"></i> 2024</p>
+                    <p>All rights reserved to respective owners</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: kummaraGanesh2001@gmail.com</p>
+                    <p>Phone: +91 9491812094</p>
+                    <div class="social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="github"><i class="fab fa-github"></i></a>
+                        <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <!-- Add more social media icons as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
